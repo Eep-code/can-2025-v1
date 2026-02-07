@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CAN 2025 Morocco Theme - Design System */
+
+@layer base {
+  :root {
+    /* Morocco 2025 Dark Theme */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Emerald Green - Primary */
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Royal Red - Secondary */
+    --secondary: 0 72% 51%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Gold Accent */
+    --accent: 45 93% 47%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 14%;
+    --sidebar-ring: 160 84% 39%;
+
+    /* Custom Gradients */
+    --gradient-emerald: linear-gradient(135deg, hsl(160, 84%, 39%) 0%, hsl(160, 84%, 29%) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(0, 72%, 51%) 0%, hsl(0, 72%, 41%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45, 93%, 47%) 0%, hsl(35, 93%, 40%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(222, 47%, 8%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(222, 47%, 8%) 0%, hsl(222, 47%, 4%) 100%);
+
+    /* Glassmorphism */
+    --glass-bg: hsla(222, 47%, 10%, 0.6);
+    --glass-border: hsla(210, 40%, 98%, 0.1);
+
+    /* Shadows */
+    --shadow-emerald: 0 10px 40px -10px hsla(160, 84%, 39%, 0.3);
+    --shadow-royal: 0 10px 40px -10px hsla(0, 72%, 51%, 0.3);
+    --shadow-gold: 0 10px 40px -10px hsla(45, 93%, 47%, 0.3);
+    --shadow-card: 0 4px 24px -4px hsla(0, 0%, 0%, 0.4);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  /* Glassmorphism Cards */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl border border-white/10;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Gradient Cards */
+  .card-emerald {
+    background: var(--gradient-emerald);
+    box-shadow: var(--shadow-emerald);
+  }
+
+  .card-royal {
+    background: var(--gradient-royal);
+    box-shadow: var(--shadow-royal);
+  }
+
+  .card-gold {
+    background: var(--gradient-gold);
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Animated underline */
+  .hover-underline {
+    @apply relative;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+
+  .hover-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Stat Card */
+  .stat-card {
+    @apply glass-card p-6 transition-all duration-300 hover:border-primary/30 hover:scale-105;
+  }
+
+  /* Python Task Card */
+  .task-card {
+    @apply glass-card p-6 space-y-4;
+  }
+
+  /* Code Output */
+  .code-output {
+    @apply bg-black/50 rounded-lg p-4 font-mono text-sm text-green-400 overflow-auto max-h-64;
+  }
+
+  /* Navigation Active State */
+  .nav-active {
+    @apply bg-primary/10 text-primary border-l-2 border-primary;
+  }
+
+  /* Hero Pattern */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(ellipse at 20% 0%, hsla(160, 84%, 39%, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 0%, hsla(0, 72%, 51%, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, hsla(45, 93%, 47%, 0.05) 0%, transparent 50%);
+  }
+
+  /* Pulse animation for stats */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsla(160, 84%, 39%, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px hsla(160, 84%, 39%, 0.4);
+    }
+  }
+}

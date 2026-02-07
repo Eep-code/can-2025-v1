@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CAN 2025 Analysis API",
+    "description": "API pour l'extraction, le nettoyage et la visualisation des données de la CAN 2025.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:5001",
+      "description": "Serveur local"
+    }
+  ],
+  "paths": {
+    "/api/scrape/matches": {
+      "post": {
+        "summary": "Scraper les données des matchs",
+        "tags": ["Scraping"],
+        "responses": {
+          "200": { "description": "Succès" }
+        }
+      }
+    },
+    "/api/scrape/stadiums": {
+      "post": {
+        "summary": "Scraper les données des stades",
+        "tags": ["Scraping"],
+        "responses": {
+          "200": { "description": "Succès" }
+        }
+      }
+    },
+    "/api/scrape/tickets": {
+      "post": {
+        "summary": "Scraper les données de billetterie",
+        "tags": ["Scraping"],
+        "responses": {
+          "200": { "description": "Succès" }
+        }
+      }
+    },
+    "/api/viz/generate-all": {
+      "post": {
+        "summary": "Générer tous les fichiers CSV de visualisation",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Fichiers générés avec succès" }
+        }
+      }
+    },
+    "/api/viz/price-distribution": {
+      "get": {
+        "summary": "Distribution des prix des billets",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Liste des bins de prix" }
+        }
+      }
+    },
+    "/api/viz/category-pricing": {
+      "get": {
+        "summary": "Statistiques de prix par catégorie",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Données agrégées par catégorie" }
+        }
+      }
+    },
+    "/api/viz/morocco-effect": {
+      "get": {
+        "summary": "Analyse de l'effet Maroc",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Comparaison Maroc vs Autres" }
+        }
+      }
+    },
+    "/api/viz/venue-stats": {
+      "get": {
+        "summary": "Statistiques par ville/stade",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Données par ville" }
+        }
+      }
+    },
+    "/api/viz/day-demand": {
+      "get": {
+        "summary": "Demande par jour de la semaine",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Série temporelle par jour" }
+        }
+      }
+    },
+    "/api/viz/correlation": {
+      "get": {
+        "summary": "Matrice de corrélation",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Données de corrélation" }
+        }
+      }
+    },
+    "/api/viz/scatter": {
+      "get": {
+        "summary": "Données pour graphique en nuage de points",
+        "tags": ["Visualisation"],
+        "responses": {
+          "200": { "description": "Échantillon de données" }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Vérifier l'état du serveur",
+        "tags": ["Utilitaires"],
+        "responses": {
+          "200": { "description": "Serveur opérationnel" }
+        }
+      }
+    },
+    "/api/data/summary": {
+      "get": {
+        "summary": "Résumé des données disponibles",
+        "tags": ["Utilitaires"],
+        "responses": {
+          "200": { "description": "Statistiques sur les datasets" }
+        }
+      }
+    },
+    "/api/workflow/reset": {
+      "post": {
+        "summary": "Réinitialiser tout le workflow (supprime les fichiers CSV)",
+        "tags": ["Utilitaires"],
+        "responses": {
+          "200": { "description": "Workflow réinitialisé avec succès" }
+        }
+      }
+    }
+  }
+}
