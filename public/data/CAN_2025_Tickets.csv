@@ -1,0 +1,16 @@
+stage,category,price_min_MAD,price_max_MAD,availability,last_updated
+Group Stage,Category 1,250,300,High,2026-02-07
+Group Stage,Category 2,150,180,High,2026-02-07
+Group Stage,Category 3,100,120,High,2026-02-07
+Round of 16,Category 1,500,600,Limited,2026-02-07
+Round of 16,Category 2,300,360,Limited,2026-02-07
+Round of 16,Category 3,200,240,Limited,2026-02-07
+Quarter-final,Category 1,875,1050,Limited,2026-02-07
+Quarter-final,Category 2,525,630,Limited,2026-02-07
+Quarter-final,Category 3,350,420,Limited,2026-02-07
+Semi-final,Category 1,1500,1800,Limited,2026-02-07
+Semi-final,Category 2,900,1080,Limited,2026-02-07
+Semi-final,Category 3,600,720,Limited,2026-02-07
+Final,Category 1,3000,3600,Limited,2026-02-07
+Final,Category 2,1800,2160,Limited,2026-02-07
+Final,Category 3,1200,1440,Limited,2026-02-07

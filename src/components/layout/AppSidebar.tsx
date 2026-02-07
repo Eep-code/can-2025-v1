@@ -45,11 +45,11 @@ const navigation: NavItem[] = [
     ],
   },
   { title: "Importation", href: "/task/import", icon: FileInput },
+  { title: "Visualisation", href: "/visualization", icon: BarChart3 },
   { title: "Nettoyage", href: "/task/cleaning", icon: Trash2 },
   { title: "Sélection", href: "/task/selection", icon: Filter },
   { title: "Transformations", href: "/task/transform", icon: RefreshCw },
   { title: "Réduction", href: "/task/reduction", icon: Minimize2 },
-  { title: "Visualisation", href: "/visualization", icon: BarChart3 },
   { title: "IA", href: "/task/ai", icon: Brain },
   { title: "Simulateur", href: "/predict", icon: Calculator },
 ];
