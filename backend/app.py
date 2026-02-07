@@ -1,16 +1,14 @@
 """
 Backend Flask pour le projet CAN 2025 - ISMAGI
 ================================================
-
 INSTRUCTIONS:
 1. Installez les dépendances: pip install flask flask-cors pandas numpy scikit-learn playwright flask_swagger_ui bs4
-1.1 python -m playwright --version
+1.1 executer la commande : python -m playwright install
 2. Lancez le serveur: python app.py
-3. Le serveur sera accessible sur http://localhost:5000
+3. Le serveur sera accessible sur http://localhost:5001
 
 Chaque camarade doit compléter sa fonction correspondante.
 """
-
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint

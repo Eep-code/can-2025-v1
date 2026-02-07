@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# CAN 2025 - Plateforme d'Analyse et de Visualisation (ISMAGI)
 
-## Project info
+Ce projet est une application complète (Full-stack) permettant de scraper, traiter, analyser et visualiser les données de la Coupe d'Afrique des Nations (CAN) 2025. Elle inclut un pipeline de Data Science complet, de l'importation brute à la prédiction par IA.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Fonctionnalités
 
-## How can I edit this code?
+- **Scraping en temps réel** : Extraction des résultats des matchs depuis le site officiel de la CAF.
+- **Pipeline de Prétraitement** : Nettoyage, sélection de caractéristiques, transformations et réduction de dimensionnalité.
+- **Visualisations Avancées** : Graphiques interactifs (Recharts) sur les prix, les stades et les performances.
+- **IA & Prédiction** : Modèle RandomForest pour prédire les prix des billets en fonction de divers facteurs.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🛠️ Installation et Lancement
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Cloner le projet
+```bash
+git clone https://github.com/votre-username/can-2025-v1.git
+cd can-2025-v1
 ```
 
-**Edit a file directly in GitHub**
+### 2. Configuration du Backend (Flask)
+Le backend gère le scraping, le pipeline de traitement de données et l'IA.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Aller dans le dossier backend
+cd backend
 
-**Use GitHub Codespaces**
+# Installer les dépendances
+pip install flask flask-cors pandas numpy scikit-learn playwright bs4
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+python -m playwright install
 
-## What technologies are used for this project?
+# Lancer le serveur
+python app.py
+```
+*Le serveur backend sera accessible sur : `http://127.0.0.1:5001`*
 
-This project is built with:
+### 3. Configuration du Frontend (React + Vite)
+Le frontend offre une interface moderne et interactive.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Revenir à la racine du projet
+cd ..
 
-## How can I deploy this project?
+# Installer les dépendances (npm ou bun)
+npm install
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+# Lancer l'application en mode développement
+npm run dev
+```
+*L'application sera accessible sur : `http://localhost:5173` (ou l'URL indiquée dans votre terminal)*
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📁 Structure du Projet
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `/src` : Code source React (Pages, Composants, Hooks).
+- `/backend` : Serveur Flask, scripts de scraping et pipeline de Data Science.
+- `/public/data` : Stockage des fichiers CSV générés et utilisés par l'application.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 👥 Équipe
+Développé dans le cadre du projet **Can 2025 - ISMAGI 2025**.
